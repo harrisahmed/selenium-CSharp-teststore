@@ -1,0 +1,9 @@
+https://www.postman.com/lunar-robot-567042/workspace/public/collection/27675651-be89a177-1cfc-485f-a0da-645e222d5d33
+
+
+Task 2
+Click on the above link
+Create a fork for this collection
+select enviroment as testEnv from upper right side
+Click on Runner to see the results
+Scripts are written in post scripts.

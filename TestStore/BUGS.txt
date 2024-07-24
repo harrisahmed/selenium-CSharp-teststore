@@ -1,0 +1,52 @@
+Bug 1
+Title: Incorrect Adjustment of Minimum Price Range
+
+Scenario:
+Given I am on the internal page with price adjustment section visible
+And the minimum price range is initially set to R 5
+When I increase the minimum price range to R 500.00
+Then the minimum price displayed should be updated to R 500.00 
+
+Expected Behavior: When I adjust the minimum price range , the displayed minimum price should accurately reflect the new setting, such as R 500.00 min price after setting the range to R 500.00.
+
+Actual Behavior: increacing the minimum price range updates the display incorrectly to R 1,234.00 instead of reflecting the newly set range (e.g., R 500.00 min).
+
+Bug 2:
+Title: Unable to Receive Confirmation Email for New Account
+
+Given I am on the registration page of the website
+When I fill out the registration form with valid details
+And submit the form
+Then I should see the message "A confirmation email has been sent for your profile"
+And I should receive a confirmation email in my inbox
+
+Expected Behavior:  After submitting the registration form with valid details, the user should receive a confirmation email promptly.
+Actual Behavior: The website displays the message confirming that a confirmation email has been sent, but the email is not received in the inbox. Consequently, the user cannot proceed with account activation.
+
+
+Bug 3:
+Title: Filter Options Not Remaining Visible When Selected
+Given I am on the internal product page
+And I can see three filters: New, In Stock, and Deals
+When I click on the "In Stock" filter option
+Then the "New" and "Deals" filter option should remain visible and clickable
+
+Expected Behavior: When I select the "In Stock" filter option, the "Deals" filter option should still be visible and selectable alongside "In Stock" and vice versa.
+
+Actual Behavior: After selecting "In Stock", the "Deals" filter option disappears from view, making it impossible to select both filters simultaneously.
+
+
+
+Bug 4:
+Title: Incorrect Adjustment of Maximum Price Range
+
+Scenario:
+Given I am on the internal page with the price adjustment section visible
+And the maximum price range is initially set to R 1,234.00
+When I decrease the maximum price range to R 800.00 per set
+Then the maximum price displayed should be updated to R 800.00 per set
+
+Expected Behavior: When I adjust the maximum price range downwards, the displayed maximum price should accurately reflect the new setting, such as R 800.00 max range.
+
+
+Actual Behavior: Decreasing the maximum price range updates the display incorrectly to R 23.00 max instead of reflecting the newly set range (e.g., R 800.00 max).

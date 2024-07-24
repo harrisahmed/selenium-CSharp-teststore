@@ -1,0 +1,84 @@
+1. Scenario: Successful checkout with a Promo code
+
+Given the user is on the checkout page
+And the user has a valid promo code
+When the user enters the promo code
+And the user confirms the order
+Then the discount should be applied to the order total
+And  the user should receive an order confirmation email with the discounted price and order details.
+
+2. Scenario: Invalid promo code during checkout
+
+Given the user is on the checkout page
+And the user has an invalid discount code
+When the user enters the discount code
+And the user attempts to apply the discount code
+Then the system should display a message indicating the code is invalid
+And the order total should remain unchanged
+
+3. Scenario: Checkout with multiple items in the cart
+
+Given the user is on the checkout page
+And the cart contains multiple items
+When the user confirms the order
+Then the order should be successfully placed
+And the user should receive an order confirmation email
+And the order details should list all the items in the cart
+
+4. Scenario: Checkout with a guest account
+
+Given the user is on the checkout page
+And the user is not logged into an account
+When the user chooses to checkout as a guest
+And the user enters their shipping and User information
+And the user confirms the order
+Then the order should be successfully placed
+And the user should receive an order confirmation email
+
+5. Scenario: Checkout with a logged-in user account
+
+Given the user is logged into their account
+And the user is on the checkout page
+When the user confirms the order
+Then the order should be successfully placed
+And the order details should be saved in the user’s order history
+And the user should receive an order confirmation email
+
+6. Scenario: Checkout with a promotional offer applied
+
+Given the user is on the checkout page
+And a promotional offer is applicable to their order
+When the user confirms the order
+Then the promotional offer should be applied to the order total
+And the user should receive an order confirmation email with the adjusted total
+
+7. Scenario: Checkout with item quantity update
+
+Given the user is on the checkout page
+And the cart contains an item
+When the user updates the quantity of an item
+And the user confirms the order
+Then the order total should reflect the updated quantities
+And the user should receive an order confirmation email with the updated order details
+
+8. Scenario: Checkout with Empty Cart
+Given the user is on the checkout page
+And user deletes then item in cart
+When the user attempts to proceed with the checkout
+Then the system should redirects to home page.
+And the user should not be able to proceed with the order
+
+9. Scenario: Checkout with Missing Required Fields
+Given the user is on the checkout page
+And the user leaves required fields empty
+When the user attempts to confirm the order
+Then the system should display error messages indicating the required fields
+
+10. Scenario: Checkout with Multiple Delivery Address Options
+Given the user is on the checkout page
+And the user has the option to select from multiple address options (e.g., To address (Own Delivery), To office Pargo)
+When the user selects a different address option than the default
+And enters valid Delivery address information for the selected option
+And confirms the order
+Then the system should process the order with the selected Delivery addresse
+And the user should receive an order confirmation email displaying the selected address
