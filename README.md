@@ -22,8 +22,7 @@ Run Tests: Select the tests you want to run and click the Run button.
 
 
 
-## Patterns
-Despite what Cypress says, Page Object Model is used because it improves code readability.
+## Patterns.
 - POM pattern is used and every page at(https://teststoreforsouthafri.nextbasket.shop/) is represented as a single class  
 - pages Folder contain all classes
 - Feature Folders contains test scenarios  written in Gerkin language
